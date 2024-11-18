@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+/* User Dropdown Styles */
+.navbar-item.user {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hidden dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin-left:-300px;
+}
+
+/* Show dropdown on hover */
+.navbar-item.user:hover .dropdown-content {
+    display: block;
+}
+.notification {
+    position: fixed;
+    top: 10px;
+    left: -100%; /* Start off-screen to the left */
+    width: 100%;
+    color: white;
+    background-color: green;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+    animation: slide-in 1s ease-in-out forwards;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+@keyframes slide-in {
+    0% {
+        left: -100%;
+    }
+    10% {
+        left: 0;
+    }
+    90% {
+        left: 0;
+    }
+    100% {
+        left: 100%; /* Moves off-screen to the right */
+    }
+}
+
+
+/* Navigation bar styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.navbar-item {
+    margin-right: 20px;
+}
+
+.navbar-item button, .navbar-item a {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar-item button:hover, .navbar-item a:hover {
+    background-color: #0056b3;
+}
+.order-button {
+    position: relative;
+    font-size: 16px; /* Base font size for button text */
+    padding-top: 20px; /* Adjust spacing for the span on top */
+}
+
+.order-count {
+    color: black;
+    font-size: 24px; /* Make the span text larger */
+    font-weight: bold;
+    position: absolute;
+    top: -10px; /* Adjust as needed to position above button text */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Styles for displaying animals in a 5-column grid */
+.animal-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allow items to wrap to the next row */
+    justify-content: space-between;
+    gap: 20px;  /* Space between each item */
+}
+
+.animal-item {
+    width: 18%;  /* Set width to 18% for five items per row */
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animal-image {
+    width: 100%;  /* Set the image width to 100% */
+    height: auto; /* Set height to auto to maintain aspect ratio */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .animal-item {
+        width: 30%;  /* Adjust for 3 animals per row on medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .animal-item {
+        width: 45%;  /* Adjust for 2 animals per row on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .animal-item {
+        width: 100%;  /* Single column for very small screens */
+    }
+}
